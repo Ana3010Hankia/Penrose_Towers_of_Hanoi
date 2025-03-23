@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Towers of Hanoi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="puzzle.png" type="image/png">
+</head>
+<body>
+   <h1 style=" text-align: center; font-weight: bold; font-family: 'Montserrat', sans-serif;">Towers of Hanoi</h1>
+   <br></br>
+   <div class="loader">
+      <div class="dot red"></div>
+  <div class="dot orange"></div>
+  <div class="dot yellow"></div> 
+  <div class="dot green"></div>  
+  <div class="dot blue"></div>
+   </div>
+<div class="container">
+    <div id="message"></div>
+    <div id="towers">
+       <ul class="tower" data-tower="0"></ul>
+       <ul class="tower" data-tower="1"></ul>
+       <ul class="tower" data-tower="2"></ul>
+    </div>
+    <div id="buttons">
+       <div class="solve">Solve</div>
+       <div class="restart">Restart</div>
+    </div>
+ </div>
+ <script src="script.js"></script>
+</body>
+</html>

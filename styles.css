@@ -1,0 +1,210 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  background: radial-gradient(circle, #aee9ef 0%, #a899b6 80%); /* Radial gradient from gold to light purple */
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+#message {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 630px;
+  min-height: 88px;
+  margin: 20px auto; /* $spacing: 20px */
+  padding: 20px; /* $spacing: 20px */
+  box-sizing: content-box;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#towers {
+  width: 67vw; /* $element-width: 67vw */
+  height: 200px; /* Hardcoded height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* $spacing: 20px */
+  margin: 20px auto; /* $spacing: 20px */
+}
+
+#towers ul {
+  box-sizing: content-box;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 150px; /* Hardcoded width */
+  height: 100%; /* Hardcoded height */
+  min-width: 150px;
+  padding: 0;
+  margin: 0 30px;
+  border-bottom: 7px saddlebrown solid; /* $tower-colour: saddlebrown */
+  border-radius: 20px;
+  transition: opacity .1s ease-in-out;
+}
+
+#towers ul:before {
+  content: '';
+  background-color: saddlebrown; /* $tower-colour: saddlebrown */
+  position: absolute;
+  left: calc(50% - 0.4vw); /* Adjusted value */
+  width: 7px; /* Hardcoded width */
+  height: 100%; /* Hardcoded height */
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  z-index: 9;
+}
+
+#towers ul.clickable {
+  cursor: pointer;
+}
+
+#towers li {
+  display: block;
+  z-index: 19;
+  height: 20px;
+  border-radius: 10px;
+  background-color: white; /* Default color for disks */
+}
+
+#towers li#disc-1 {
+  width: 60px;
+  background-color: #ff6666; /* Red */
+}
+
+#towers li#disc-2 {
+  width: 70px;
+  background-color: #ffcc66; /* Yellow */
+}
+
+#towers li#disc-3 {
+  width: 80px;
+  background-color: #66ff66; /* Green */
+}
+
+#towers li#disc-4 {
+  width: 90px;
+  background-color: #66ccff; /* Light Blue */
+}
+
+#towers li#disc-5 {
+  width: 100px;
+  background-color: #6666ff; /* Blue */
+}
+
+#towers li#disc-6 {
+  width: 110px;
+  background-color: #cc66ff; /* Purple */
+}
+
+#towers li#disc-7 {
+  width: 120px;
+  background-color: #ff66cc; /* Pink */
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  width: 67vw; /* $element-width: 67vw */
+  padding: 20px 0; /* $spacing: 20px */
+  margin: 20px auto; /* $spacing: 20px */
+}
+
+#buttons div {
+  display: block;
+  border-radius: 5px;
+  margin: 0 20px;
+  padding: 20px 30px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  opacity: 0.5;
+}
+
+#buttons .solve {
+  background-color: rgb(9, 0, 56);
+}
+
+#buttons .restart {
+  background-color: rgb(124, 0, 124);
+}
+
+#buttons div.clickable {
+  cursor: pointer;
+  transition: opacity .1s ease-in-out;
+}
+
+#buttons div.clickable:hover {
+  opacity: 0.75;
+}
+
+#buttons div.clickable:active {
+  opacity: 1;
+}
+
+/* css loading  */
+/* HTML: <div class="loader"></div> */
+.loader {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the dots horizontally */
+  align-items: flex-end; /* Align the dots at the bottom for bounce effect */
+  height: 25px; /* Set the height */
+}
+
+.dot {
+  width: 25px; /* Set width for each dot */
+  height: 25px; /* Set height for each dot */
+  border-radius: 50%; /* Make them circular */
+  margin: 0 7px; /* Space between dots */
+  animation: bounce 0.6s infinite; /* Add bounce animation */
+}
+
+/* Define colors for each dot (rainbow colors) */
+.dot.red { background-color: red; }
+.dot.orange { background-color: orange; }
+.dot.yellow { background-color: yellow; } /* Added yellow */
+.dot.green { background-color: green; }   /* Added green */
+.dot.blue { background-color: blue; }
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Bounce effect */
+  }
+}
+
+/* Add slight delays for staggered effect */
+.dot.red { animation-delay: 0s; }
+.dot.orange { animation-delay: 0.1s; }
+.dot.yellow { animation-delay: 0.2s; } /* Added delay for yellow */
+.dot.green { animation-delay: 0.3s; }  /* Added delay for green */
+.dot.blue { animation-delay: 0.4s; }
